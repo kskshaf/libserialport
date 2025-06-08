@@ -16,6 +16,7 @@
 /libtool
 stamp-h?
 .vs/
+.vscode/
 Debug/
 Release/
 x64/

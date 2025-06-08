@@ -71,8 +71,8 @@ int main(int argc, char **argv)
 	 * There are no "default" settings applied by libserialport.
 	 * When you open a port it has the defaults from the OS or driver,
 	 * or the settings left over by the last program to use it. */
-	printf("Setting port to 115200 8N1, no flow control.\n");
-	check(sp_set_baudrate(port, 115200));
+	printf("Setting port to 4800 8N1, no flow control.\n");
+	check(sp_set_baudrate(port, 4800));
 	check(sp_set_bits(port, 8));
 	check(sp_set_parity(port, SP_PARITY_NONE));
 	check(sp_set_stopbits(port, 1));
