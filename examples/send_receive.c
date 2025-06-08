@@ -68,14 +68,14 @@ void get_module_data(uint8_t *frame)
     IM1281B_OUT.I  = output[1]*0.0001f;
     IM1281B_OUT.P  = output[2]*0.0001f;
     IM1281B_OUT.PF = output[4]*0.001f;
-	IM1281B_OUT.T  = output[6]*0.01f;
+    IM1281B_OUT.T  = output[6]*0.01f;
     IM1281B_OUT.F  = output[7]*0.01f;
 
     printf("[IM1281B] U_in=%f\n", IM1281B_OUT.U);
     printf("[IM1281B] I_in=%f\n", IM1281B_OUT.I);
     printf("[IM1281B] P_in=%f\n", IM1281B_OUT.P);
     printf("[IM1281B] PF_in=%f\n", IM1281B_OUT.PF);
-	printf("[IM1281B] T_in=%f\n", IM1281B_OUT.T);
+    printf("[IM1281B] T_in=%f\n", IM1281B_OUT.T);
     printf("[IM1281B] F_in=%f\n", IM1281B_OUT.F);
 }
 
@@ -166,7 +166,7 @@ int main(int argc, char **argv)
     // https://stackoverflow.com/questions/30225423/send-hex-values-via-serial-port-in-c
     // https://github.com/tree-water/acac/blob/main/Core/Src/IM1281B.c
     uint8_t crc_non_data[receive_size - 2];
-	uint8_t main_data[receive_size - 5];
+    uint8_t main_data[receive_size - 5];
     for(int j=0; j < (receive_size - 2); j++)
     {
         crc_non_data[j] = buf[j];
@@ -185,7 +185,7 @@ int main(int argc, char **argv)
             printf("%02X ", buf[i]);
         }
         printf("\n\n");
-		get_module_data(main_data);
+        get_module_data(main_data);
     }
 
     /* Free receive buffer. */
